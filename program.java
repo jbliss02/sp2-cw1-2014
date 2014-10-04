@@ -2,7 +2,13 @@ public class program {
 
 	public static void main(String[] args)
 	{
-		System.out.println("test");
+		System.out.println("STARTING");
+
+		Compare comp = new Compare(GiveArrayA(), GiveArrayB());
+		comp.printArrays();
+		comp.printIntersection();
+		
+		
 	}
 
 	public static int[] GiveArrayA()
