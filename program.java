@@ -5,8 +5,8 @@ public class program {
 		System.out.println("STARTING");
 
 		Compare comp = new Compare(GiveArrayA(), GiveArrayB());
-		comp.printArrays();
-		comp.printIntersection();
+		comp.DoAnalysis();
+
 		
 		
 	}
