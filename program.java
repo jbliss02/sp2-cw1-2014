@@ -1,11 +1,19 @@
+import java.util.Scanner;
+
 public class program {
 
 	public static void main(String[] args)
 	{
-		System.out.println("STARTING");
+		
 
 		Arraybuilder arraybuilder = new Arraybuilder();
-		
+		System.out.println("Enter data for array " +  arraybuilder.currentArray +  " (0 to finish):");
+
+		Scanner scanner = new Scanner(System.in);
+		while(!scanner.hasNextInt())
+		{
+			arraybuilder.intIn(scanner.nextInt());
+		}
 		
 		Compare comp = new Compare(GiveArrayA(), GiveArrayB());
 		comp.DoAnalysis();
