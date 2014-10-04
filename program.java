@@ -10,18 +10,38 @@ public class program {
 		System.out.println("Enter data for array " +  arraybuilder.currentArray +  " (0 to finish):");
 
 		Scanner scanner = new Scanner(System.in);
-		while(!scanner.hasNextInt())
+		
+		boolean exit = false;
+		
+		while (!exit)
 		{
-			arraybuilder.intIn(scanner.nextInt());
+			while(!scanner.hasNextInt())
+			{
+				System.out.println("Invalid entry, try again: ");
+				scanner.next();
+			}
+	
+			exit = arraybuilder.intIn(scanner.nextInt());
+			
 		}
 		
-		Compare comp = new Compare(GiveArrayA(), GiveArrayB());
-		comp.DoAnalysis();
+		
 
 		
 		
+		//while(scanner.hasNextInt())
+		//{
+		//	arraybuilder.intIn(scanner.nextInt());
+	//	}
+		
+		//Compare comp = new Compare(GiveArrayA(), GiveArrayB());
+		//comp.DoAnalysis();
+
 	}
 
+
+	
+	
 	public static int[] GiveArrayA()
 	{
 		int[] ret = new int[8];
