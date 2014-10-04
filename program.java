@@ -4,6 +4,9 @@ public class program {
 	{
 		System.out.println("STARTING");
 
+		Arraybuilder arraybuilder = new Arraybuilder();
+		
+		
 		Compare comp = new Compare(GiveArrayA(), GiveArrayB());
 		comp.DoAnalysis();
 
