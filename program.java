@@ -1,76 +1,47 @@
 import java.util.Scanner;
-
+/**
+ * Program prompts the user to enter integers which are entered into 2 arrays
+ * User enters 0 to finish entry into array. Once 0 has been entered into the
+ * second array integer entry is considered finished
+ * duplicate integers are not entered into either array, each int in an array
+ * is unique
+ *
+ * @author jbliss02
+ * @version 1.0
+ */
+ 
 public class program {
 
+/**
+ * Main program which prompts for user input and then runs the analysis
+ *
+ */
 	public static void main(String[] args)
 	{
-		
 
-		Arraybuilder arraybuilder = new Arraybuilder();
-		System.out.println("Enter data for array " +  arraybuilder.currentArray +  " (0 to finish):");
-
+		Arraybuilder arrayBuilder = new Arraybuilder(); //takes the user input to set the arrays and defines when to stop
 		Scanner scanner = new Scanner(System.in);
+		boolean exit = false; //flag to show when number entry has finished
 		
-		boolean exit = false;
-		
+		//prompt the use to enter the values for the array
 		while (!exit)
 		{
-			while(!scanner.hasNextInt())
+			System.out.print("Enter data for array " +  arrayBuilder.currentArray +  " (0 to finish):");
+			while(!scanner.hasNextInt()) //non ints
 			{
-				System.out.println("Invalid entry, try again: ");
+				System.out.print("Invalid entry, try again: ");
 				scanner.next();
 			}
 	
-			exit = arraybuilder.intIn(scanner.nextInt());
-			
-		}
+			//load the integer into the array builder, and set the exit boolean
+			exit = arrayBuilder.intIn(scanner.nextInt()); 
+				
+		}//while (!exit)
 		
+		//arrays are set, do the comparison
+		Compare compare = new Compare(arrayBuilder.arrayA, arrayBuilder.posA, arrayBuilder.arrayB, arrayBuilder.posB);
+		compare.doAnalysis();
 		
-
-		
-		
-		//while(scanner.hasNextInt())
-		//{
-		//	arraybuilder.intIn(scanner.nextInt());
-	//	}
-		
-		//Compare comp = new Compare(GiveArrayA(), GiveArrayB());
-		//comp.DoAnalysis();
-
-	}
-
-
+	}//main ends
 	
-	
-	public static int[] GiveArrayA()
-	{
-		int[] ret = new int[8];
-		ret[0] = 1;
-		ret[1] = 4;
-		ret[2] = 2;
-		ret[3] = 5;
-		ret[4] = 7;
-		ret[5] = 4;
-		ret[6] = 8;
-		ret[7] = 6;
-		
-		return ret;
-	}
-	
-		public static int[] GiveArrayB()
-	{
-		int[] ret = new int[8];
-		ret[0] = 5;
-		ret[1] = 7;
-		ret[2] = 3;
-		ret[3] = 11;
-		ret[4] = 4;
-		ret[5] = 7;
-		ret[6] = 3;
-		ret[7] = 9;
-		
-		return ret;
-	}
-	
-	
-}
+}//program class ends

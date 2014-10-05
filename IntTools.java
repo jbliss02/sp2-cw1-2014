@@ -1,8 +1,18 @@
 import java.util.*;
 
-public class IntTools
-{//the superclass for the private classes, contains functions that are common across the classes
+/**
+ * IntTools - A class which contains common methods when working with integers
+ * 
+ * @author jbliss02
+ * @version 1.0
+ */
 
+public class IntTools
+{
+	/**
+	 * intExists 
+	 * checks whether the provided int (inp) exists in the provided list (list)
+	 */
 	public boolean intExists(List<Integer> list, int inp)
 	{//checks whether the provided int (inp) exists in the provided list (list)
 	
@@ -15,9 +25,13 @@ public class IntTools
 	
 	}//private boolean intExists
 	
-	public boolean intExists(int[] array, int inp)
-	{//checks whether the provided int (inp) exists in the provided list (list)
 	
+	/**
+	 * intExists 
+	 * checks whether the provided int (inp) exists in the provided array (array)
+	 */
+	public boolean intExists(int[] array, int inp)
+	{
 		for(Integer i : array)
 		{
 			if (i == inp) {return true;}
@@ -27,8 +41,13 @@ public class IntTools
 	
 	}//private boolean intExists
 	
+	
+	/**
+	 * listToString 
+	 * returns the elemts of a the Integer list (list) as a string
+	 */
 	public String listToString(List<Integer> list) 
-	{//returns the elemts of a the Integer list (list) as a string
+	{
 	
 		if(list.size() > 0)
 		{
@@ -44,7 +63,6 @@ public class IntTools
 			return "None";
 		}
 
-	}//listToString
-	
+	}//listToString()
 	
 }//IntTools ends
