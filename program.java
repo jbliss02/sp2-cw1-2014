@@ -7,7 +7,7 @@ import java.util.Scanner;
  * is unique
  *
  * @author jbliss02
- * @version 1
+ * @version 1.0
  */
  
 public class program {
